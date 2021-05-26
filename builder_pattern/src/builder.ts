@@ -1,4 +1,4 @@
-class Request_aksFor {
+class Requests {
   url: string;
   method: string;
   data: any;
@@ -9,30 +9,33 @@ class Request_aksFor {
   }
 }
 class RequestBuilder {
-  request_aksFor: any;
+  Requests: any;
 
   constructor() {
-    this.request_aksFor = new Request_aksFor();
+    this.Requests = new Requests();
   }
   forUrl(url: string) {
-    this.request_aksFor.url = url;
+    this.Requests.url = url;
     return this;
   }
   useMethod(method: string) {
-    this.request_aksFor.method = method;
+    this.Requests.method = method;
     return this;
   }
   setData(data: any) {
-    this.request_aksFor.data = data;
+    this.Requests.data = data;
     return this;
   }
   build() {
-    return this.request_aksFor;
+    return this.Requests;
   }
 }
-let getRequest = new RequestBuilder().forUrl('https://github.com/hg-pyun').useMethod('GET').build();
+let getRequest = new RequestBuilder()
+  .forUrl('https://github.com/creatijin/TS_Design_Pattern/blob/master/builder_pattern/src/builder.ts')
+  .useMethod('GET')
+  .build();
 let postRequest = new RequestBuilder()
-  .forUrl('https://github.com/hg-pyun')
+  .forUrl('https://github.com/creatijin/TS_Design_Pattern/blob/master/builder_pattern/src/builder.ts')
   .useMethod('POST')
-  .setData({ id: 'hg', password: 1234 })
+  .setData({ id: 'creatijin', password: 1234 })
   .build();
