@@ -1,11 +1,11 @@
 class Requests {
   url: string;
   method: string;
-  data: any;
+  data: object;
   constructor() {
     this.url = '';
     this.method = '';
-    this.data = null;
+    this.data = {};
   }
 }
 class RequestBuilder {
@@ -22,7 +22,7 @@ class RequestBuilder {
     this.Requests.method = method;
     return this;
   }
-  setData(data: any) {
+  setData(data: object) {
     this.Requests.data = data;
     return this;
   }
